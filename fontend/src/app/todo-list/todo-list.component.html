@@ -1,0 +1,21 @@
+<main>
+    <!-- Jumbotron -->
+    <div class="px-5 py-2 text-center bg-light" style="margin-top: 58px;">
+      <div class="list-group list-group-light">
+        <ul class="list-group">
+            <li *ngFor="let item of items; let i = index" class="mb-1 px-1 d-flex align-items-center justify-content-between border-bottom">
+              {{ item.text }}
+              <a class="btn btn-danger" (click)="deleteItem(i)" role="button">Delete</a>
+            </li>
+          </ul>
+          
+      </div>
+      <button class="m-2 btn btn-primary" (click)="toggleInputForm()" role="button">Add</button>
+      <div *ngIf="showInputForm" class="d-flex align-items-center">
+        <input class="form-control me-2" #newItemText placeholder="Create note">
+        <button class="m-2 btn btn-success" (click)="addItem(newItemText.value)" role="button">Save</button>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </main>
+  
